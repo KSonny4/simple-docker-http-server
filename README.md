@@ -27,14 +27,14 @@ This is container uses `python`, `poetry`, `aiohttp` and `docker` to create web 
 ## examples
 
  # Run docker container on local port 1234
- docker run -d -p 1234:8080 web:latest
+ docker run -d -p 1234:8080 simple-docker-http-server:latest
  curl 'http://127.0.0.1:1234/'
  curl 'http://localhost:1234/'
 
 # Use port 8888 in container and local port 8080
- docker run -d -p 8080:8888 -e PORT=8888 web:latest
+ docker run -d -p 8080:8888 -e PORT=8888 simple-docker-http-server:latest
  curl 'http://127.0.0.1:8080/'
 
 # Change host in docker 
- docker run -d -p 8080:8888 -e HOST=0.0.0.0 -e PORT=8888 web:latest
+ docker run -d -p 8080:8888 -e HOST=0.0.0.0 -e PORT=8888 simple-docker-http-server:latest
  curl 'http://127.0.0.1:8080/'
