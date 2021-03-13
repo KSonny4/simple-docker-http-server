@@ -20,7 +20,8 @@ class WebServer:
         self._runner = web.AppRunner(self._web_app)
 
     def _add_routes(self):
-        self._web_app.router.add_route("GET", "/", self._get_html)
+        self._web_app.router.add_route("GET", "/{tail:.*}", self._get_html)
+        self._web_app.router.add_route("HEAD", "/{tail:.*}", self._get_html)
 
     async def start_web_server(self):
         self._add_routes()
@@ -40,19 +41,21 @@ class WebServer:
 def setup() -> Tuple[str, int]:
     try:
         host = os.environ["HOST"]
+        logger.info("Host is %s", host)
     except KeyError:
-        host = "127.0.0.1"
+        host = "0.0.0.0"
         logger.warning("Host was not provided via env. variable HOST, used %s", host)
     try:
         port = int(os.environ["PORT"])
+        logger.info("Port is %s", port)
     except KeyError:
         port = 8080
         logger.warning("Port was not provided via env. variable PORT, used %s", port)
+    logger.info(f"Connect to http://%s:%s", host, port)
     return host, port
 
 
-async def async_main() -> None:
-    loop = asyncio.get_running_loop()
+async def async_main() -> None:    
     host, port = setup()
     web = WebServer(host, port)
 

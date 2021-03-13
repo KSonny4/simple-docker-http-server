@@ -1,0 +1,31 @@
+name: test
+
+on: [push]
+
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+      - uses: Gr1N/setup-poetry@v4
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pypoetry/virtualenvs
+          key: ${{ runner.os }}-poetry-${{ hashFiles('poetry.lock') }}
+      
+      - name: Install Dependencies
+        run: poetry install
+        if: steps.cache.outputs.cache-hit != 'true'
+
+      - name: Run Black
+        run: poetry run black . --check
+
+      - name: Run Mypy
+        run: poetry run mypy
+
+      - name: Test with pytest
+        run: poetry run pytest

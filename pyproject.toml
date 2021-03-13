@@ -5,9 +5,7 @@ description = "Simple http dockerized web for testing purposes."
 
 license = "MIT"
 
-authors = [
-    "Petr Kubelka <ksonny4@gmail.com>"
-]
+authors = ["Petr Kubelka <ksonny4@gmail.com>"]
 
 readme = 'README.md'  # Markdown files are supported
 
@@ -18,6 +16,7 @@ include = ["*.conf", "*.json", "py.typed"]
 [tool.poetry.dependencies]
 python = "^3.9"
 aiohttp = "^3.5.4"
+pytest-asyncio = "^0.14.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.0"
@@ -30,7 +29,7 @@ pytest-black = "^0.3.12"
 web = "web.web:main"
 
 [tool.pytest.ini_options]
-addopts = "--verbose --pylint --pylint-rcfile=pyproject.toml --cov=web.web --cov-report html"
+addopts = "--verbose --pylint --pylint-rcfile=pyproject.toml --cov=web.web --cov-report html --mypy --black"
 
 
 [tool.pylint.master]
@@ -53,3 +52,6 @@ enable = """,
     unnecesary-pass,
     """
 ignored_argument_names = "_.*|^ignored_|^unused_|args|kwargs"
+
+[tool.black]
+target-version = ['py38']
