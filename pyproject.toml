@@ -1,0 +1,63 @@
+[tool.poetry]
+name = "web"
+version = "0.1.0"
+description = "Simple http dockerized web for testing purposes."
+
+license = "MIT"
+
+authors = ["Petr Kubelka <ksonny4@gmail.com>"]
+
+readme = 'README.md'  # Markdown files are supported
+
+repository = "https://github.com/KSonny4/simple-http-web"
+
+include = ["*.conf", "*.json", "py.typed"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+aiohttp = "^3.5.4"
+pytest-asyncio = "^0.14.0"
+isort = "^5.7.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.0"
+pytest-cov = "^2.8.1"
+pytest-mypy = "^0.8.0"
+pytest-pylint = "^0.14.1"
+pytest-black = "^0.3.12"
+
+[tool.poetry.scripts]
+web = "web.web:main"
+
+[tool.pytest.ini_options]
+addopts = "--verbose --pylint --pylint-rcfile=pyproject.toml --cov=web.web --cov-report html --mypy --black"
+
+
+[tool.pylint.master]
+good-names = "logger,e,i,j,n,m,f,_"
+
+[tool.pylint.messages_control]
+disable = "all"
+enable = """,
+    unused-import,
+    fixme,
+    useless-object-inheritance,
+    unused-variable,
+    unused-argument,
+    unexpected-keyword-arg,
+    string,
+    unreachable,
+    invalid-name,
+    logging-format-interpolation,
+    logging-fstring-interpolation,
+    unnecesary-pass,
+    """
+ignored_argument_names = "_.*|^ignored_|^unused_|args|kwargs"
+
+[tool.black]
+target-version = ['py38']
+
+
+[mypy]
+strict = true
+ignore_missing_imports = true
