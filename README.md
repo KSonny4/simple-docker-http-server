@@ -1,4 +1,4 @@
-# simple-docker-http-server
+# Simple Docker HTTP server
 
 <p>
   <a href="https://github.com/KSonny4/simple-docker-http-server">
