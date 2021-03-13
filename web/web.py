@@ -31,7 +31,8 @@ class WebServer:
 
     async def _get_html(self, _request):
         return web.Response(
-            text=f"<p>This is html test web on {self._host}:{self._port}</p>", content_type="text/html"
+            text=f"<p>This is html test web on {self._host}:{self._port}</p>",
+            content_type="text/html",
         )
 
     async def close(self):
@@ -55,7 +56,7 @@ def setup() -> Tuple[str, int]:
     return host, port
 
 
-async def async_main() -> None:    
+async def async_main() -> None:
     host, port = setup()
     web = WebServer(host, port)
 
@@ -68,9 +69,10 @@ async def async_main() -> None:
     finally:
         await web.close()
 
+
 def main() -> None:
     asyncio.run(async_main())
 
+
 if __name__ == "__main__":
     main()
-    

@@ -144,7 +144,7 @@ python-versions = ">=3.4"
 name = "isort"
 version = "5.7.0"
 description = "A Python utility / library to sort Python imports."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6,<4.0"
 
@@ -435,7 +435,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "f8b49f2c08c52316012be7962dcde75da9e15658d9bd7b1b5ad0c74bf2fe8c2b"
+content-hash = "805678420e36b26701b68a60723b28e8a77283d882d2da0033294b8507ef92da"
 
 [metadata.files]
 aiohttp = [

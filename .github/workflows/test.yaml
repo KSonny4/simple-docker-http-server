@@ -33,6 +33,9 @@ jobs:
       - name: Run Black
         run: poetry run black . --check
 
+      -name: Run isort
+        run: poetry run isort **/*.py -c
+
       - name: Run Mypy
         run: poetry run mypy
 

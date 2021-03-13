@@ -17,6 +17,7 @@ include = ["*.conf", "*.json", "py.typed"]
 python = "^3.9"
 aiohttp = "^3.5.4"
 pytest-asyncio = "^0.14.0"
+isort = "^5.7.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.0"
