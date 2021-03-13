@@ -1,5 +1,5 @@
 import aiohttp
-import pytest
+import pytest # type: ignore
 
 from web.web import WebServer
 

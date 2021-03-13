@@ -56,3 +56,8 @@ ignored_argument_names = "_.*|^ignored_|^unused_|args|kwargs"
 
 [tool.black]
 target-version = ['py38']
+
+
+[mypy]
+strict = true
+ignore_missing_imports = true

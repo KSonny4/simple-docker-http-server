@@ -37,7 +37,7 @@ jobs:
         run: poetry run isort **/*.py -c
 
       - name: Run Mypy
-        run: poetry run mypy
+        run: poetry run mypy --config-file pyproject.toml .
 
       - name: Test with pytest
         run: poetry run pytest

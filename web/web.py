@@ -19,23 +19,23 @@ class WebServer:
         self._web_app = web.Application()
         self._runner = web.AppRunner(self._web_app)
 
-    def _add_routes(self):
+    def _add_routes(self) -> None:
         self._web_app.router.add_route("GET", "/{tail:.*}", self._get_html)
         self._web_app.router.add_route("HEAD", "/{tail:.*}", self._get_html)
 
-    async def start_web_server(self):
+    async def start_web_server(self) -> None:
         self._add_routes()
         await self._runner.setup()
         site = web.TCPSite(self._runner, self._host, self._port)
         await site.start()
 
-    async def _get_html(self, _request):
+    async def _get_html(self, _request: web.Request) -> web.Response:
         return web.Response(
             text=f"<p>This is html test web on {self._host}:{self._port}</p>",
             content_type="text/html",
         )
 
-    async def close(self):
+    async def close(self) -> None:
         await self._runner.cleanup()
 
 
