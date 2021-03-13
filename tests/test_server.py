@@ -1,5 +1,6 @@
+ # type: ignore
 import aiohttp
-import pytest # type: ignore
+import pytest
 
 from web.web import WebServer
 
