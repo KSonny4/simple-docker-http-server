@@ -1,4 +1,4 @@
- # type: ignore
+# type: ignore
 import aiohttp
 import pytest
 
@@ -8,13 +8,7 @@ from web.web import WebServer
 @pytest.mark.asyncio
 @pytest.mark.parametrize(
     "url_route",
-    [
-        "",
-        "index.html",
-        "text",
-        "test/test/" * 50,
-        "../../.."
-    ],
+    ["", "index.html", "text", "test/test/" * 50, "../../.."],
 )
 async def test_web(web: WebServer, url_route: str) -> None:
     url = f"http://{web._host}:{web._port}/{url_route}"
