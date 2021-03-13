@@ -1,22 +1,10 @@
 # Simple Docker HTTP server
 
-<p>
-  <a href="https://github.com/KSonny4/simple-docker-http-server">
-    <img alt="GitHub CI" src="https://github.com/KSonny4/simple-docker-http-server/workflows/ci/badge.svg" />
-  </a>
-  <a href="https://hub.docker.com/r/ksonny4/simple-docker-http-server">
-    <img alt="Docker Image Version" src="https://img.shields.io/docker/v/ksonny4/simple-docker-http-server/latest">
-  </a>
-  <a href="https://hub.docker.com/r/ksonny4/simple-docker-http-server">
-    <img alt="Docker Image Size" src="https://img.shields.io/docker/image-size/ksonny4/simple-docker-http-server/latest">
-  </a>
-  <a href="https://hub.docker.com/r/ksonny4/simple-docker-http-server">
-    <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/ksonny4/simple-docker-http-server/latest" />
-  </a>
-  <a href="https://hub.docker.com/r/ksonny4/simple-docker-http-server">
-    <img alt="Docker Stars" src="https://img.shields.io/docker/stars/ksonny4/simple-docker-http-server/latest" />
-  </a>
-</p>
+![GitHub CI](https://github.com/KSonny4/simple-docker-http-server/actions/workflows/ci.yaml/badge.svg)
+[![Docker Stars](hhttps://img.shields.io/docker/stars/ksonny4/simple-docker-http-server.svg)](https://hub.docker.com/r/ksonny4/simple-docker-http-server)
+[![Docker Pulls](https://img.shields.io/docker/pulls/ksonny4/simple-docker-http-server.svg)](https://hub.docker.com/r/ksonny4/simple-docker-http-server)
+[![Docker Image Size](https://img.shields.io/docker/image-size/ksonny4/simple-docker-http-server.svg)](https://hub.docker.com/r/ksonny4/simple-docker-http-server)
+[![Docker Image Version](https://img.shields.io/docker/v/ksonny4/simple-docker-http-server.svg)](https://hub.docker.com/r/ksonny4/simple-docker-http-server)
 
 Yet another simple dockerized http web for testing purposes. I don't want to run someone else's
 http server when I can quickly create my own and be sure what am I running. There are easier ways
@@ -26,15 +14,21 @@ This is container uses `python`, `poetry`, `aiohttp` and `docker` to create web 
 
 ## examples
 
- # Run docker container on local port 1234
+### Run docker container on local port 1234
+ ```bash
  docker run -d -p 1234:8080 simple-docker-http-server:latest
  curl 'http://127.0.0.1:1234/'
  curl 'http://localhost:1234/'
+ ```
 
-# Use port 8888 in container and local port 8080
+### Use port 8888 in container and local port 8080
+```bash
  docker run -d -p 8080:8888 -e PORT=8888 simple-docker-http-server:latest
  curl 'http://127.0.0.1:8080/'
+ ```
 
-# Change host in docker 
+### Change host in docker 
+ ```bash
  docker run -d -p 8080:8888 -e HOST=0.0.0.0 -e PORT=8888 simple-docker-http-server:latest
  curl 'http://127.0.0.1:8080/'
+ ```
