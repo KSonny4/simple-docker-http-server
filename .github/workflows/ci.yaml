@@ -5,48 +5,48 @@ on:
     branches:
       - "master"
 
-  jobs:
-    test:
-      runs-on: ubuntu-latest
+jobs:
+  test:
+    runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        python-version: [3.9]
+  strategy:
+    matrix:
+      python-version: [3.9]
 
-      fail-fast: true
+    fail-fast: true
 
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v1
-        with:
-          python-version: ${{ matrix.python-version }}
-      - uses: Gr1N/setup-poetry@v4        
-      - uses: actions/cache@v1
-        with:
-          path: ~/.cache/pypoetry/virtualenvs
-          key: ${{ runner.os }}-${{ matrix.python-version }}-poetry-${{ hashFiles('pyproject.toml') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ matrix.python-version }}-poetry-      
+  steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+    - uses: Gr1N/setup-poetry@v4        
+    - uses: actions/cache@v1
+      with:
+        path: ~/.cache/pypoetry/virtualenvs
+        key: ${{ runner.os }}-${{ matrix.python-version }}-poetry-${{ hashFiles('pyproject.toml') }}
+        restore-keys: |
+          ${{ runner.os }}-${{ matrix.python-version }}-poetry-      
 
-      - name: Install Dependencies
-        run: poetry install
-        if: steps.cache.outputs.cache-hit != 'true'
+    - name: Install Dependencies
+      run: poetry install
+      if: steps.cache.outputs.cache-hit != 'true'
 
-      - name: Run Black
-        run: poetry run black . --check
+    - name: Run Black
+      run: poetry run black . --check
 
-      - name: Run isort
-        run: poetry run isort **/*.py -c
+    - name: Run isort
+      run: poetry run isort **/*.py -c
 
-      - name: Run Mypy
-        run: poetry run mypy --config-file pyproject.toml .
+    - name: Run Mypy
+      run: poetry run mypy --config-file pyproject.toml .
 
-      - name: Test with pytest
-        run: poetry run pytest
-      - name: Push to Docker Hub
-        uses: docker/build-push-action@v1
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: ksonny4/simple-http-server
-          tag_with_ref: true
+    - name: Test with pytest
+      run: poetry run pytest
+    - name: Push to Docker Hub
+      uses: docker/build-push-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        repository: ksonny4/simple-http-server
+        tag_with_ref: true
