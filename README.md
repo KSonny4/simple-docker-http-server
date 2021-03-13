@@ -1,4 +1,23 @@
-# simple-docker-web
+# simple-docker-http-server
+
+<p>
+  <a href="https://github.com/KSonny4/simple-docker-http-server">
+    <img alt="GitHub CI" src="https://github.com/KSonny4/simple-docker-http-server/workflows/ci/badge.svg" />
+  </a>
+  <a href="https://hub.docker.com/r/ksonny4/simple-docker-http-server">
+    <img alt="Docker Image Version" src="https://img.shields.io/docker/v/ksonny4/simple-docker-http-server/latest">
+  </a>
+  <a href="https://hub.docker.com/r/ksonny4/simple-docker-http-server">
+    <img alt="Docker Image Size" src="https://img.shields.io/docker/image-size/ksonny4/simple-docker-http-server/latest">
+  </a>
+  <a href="https://hub.docker.com/r/ksonny4/simple-docker-http-server">
+    <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/ksonny4/simple-docker-http-server/latest" />
+  </a>
+  <a href="https://hub.docker.com/r/ksonny4/simple-docker-http-server">
+    <img alt="Docker Stars" src="https://img.shields.io/docker/stars/ksonny4/simple-docker-http-server/latest" />
+  </a>
+</p>
+
 Yet another simple dockerized http web for testing purposes. I don't want to run someone else's
 http server when I can quickly create my own and be sure what am I running. There are easier ways
 to create HTTP server, but I am most familiar with `aiohttp`.
