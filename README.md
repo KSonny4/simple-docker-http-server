@@ -1,7 +1,8 @@
 # Simple Docker HTTP server
 
-![GitHub CI](https://github.com/KSonny4/simple-docker-http-server/actions/workflows/ci.yaml/badge.svg)
-[![Docker Stars](hhttps://img.shields.io/docker/stars/ksonny4/simple-docker-http-server.svg)](https://hub.docker.com/r/ksonny4/simple-docker-http-server)
+[![GitHub CI](https://github.com/KSonny4/simple-docker-http-server/actions/workflows/ci.yaml)](https://github.com/KSonny4/simple-docker-http-server/actions/workflows/ci.yaml/badge.svg)
+
+[![Docker Stars](https://img.shields.io/docker/stars/ksonny4/simple-docker-http-server.svg)](https://hub.docker.com/r/ksonny4/simple-docker-http-server)
 [![Docker Pulls](https://img.shields.io/docker/pulls/ksonny4/simple-docker-http-server.svg)](https://hub.docker.com/r/ksonny4/simple-docker-http-server)
 [![Docker Image Size](https://img.shields.io/docker/image-size/ksonny4/simple-docker-http-server.svg)](https://hub.docker.com/r/ksonny4/simple-docker-http-server)
 [![Docker Image Version](https://img.shields.io/docker/v/ksonny4/simple-docker-http-server.svg)](https://hub.docker.com/r/ksonny4/simple-docker-http-server)
@@ -16,19 +17,19 @@ This is container uses `python`, `poetry`, `aiohttp` and `docker` to create web 
 
 ### Run docker container on local port 1234
  ```bash
- docker run -d -p 1234:8080 simple-docker-http-server:latest
+ docker run -d -p 1234:8080 ksonny4/simple-docker-http-server
  curl 'http://127.0.0.1:1234/'
  curl 'http://localhost:1234/'
  ```
 
 ### Use port 8888 in container and local port 8080
 ```bash
- docker run -d -p 8080:8888 -e PORT=8888 simple-docker-http-server:latest
+ docker run -d -p 8080:8888 -e PORT=8888 ksonny4/simple-docker-http-server
  curl 'http://127.0.0.1:8080/'
  ```
 
 ### Change host in docker 
  ```bash
- docker run -d -p 8080:8888 -e HOST=0.0.0.0 -e PORT=8888 simple-docker-http-server:latest
+ docker run -d -p 8080:8888 -e HOST=0.0.0.0 -e PORT=8888 ksonny4/simple-docker-http-server
  curl 'http://127.0.0.1:8080/'
  ```
