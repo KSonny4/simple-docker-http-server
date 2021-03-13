@@ -7,11 +7,11 @@
 [![Docker Image Size](https://img.shields.io/docker/image-size/ksonny4/simple-docker-http-server.svg)](https://hub.docker.com/r/ksonny4/simple-docker-http-server)
 [![Docker Image Version](https://img.shields.io/docker/v/ksonny4/simple-docker-http-server.svg)](https://hub.docker.com/r/ksonny4/simple-docker-http-server)
 
-Yet another simple dockerized http web for testing purposes. I don't want to run someone else's
-http server when I can quickly create my own and be sure what am I running. There are easier ways
+Yet another simple dockerized http web for testing purposes that responds to all GET requests. I don't want to run someone else's
+HTTP server when I can quickly create my own and be sure what am I running. There are easier ways
 to create HTTP server, but I am most familiar with `aiohttp`.
 
-This is container uses `python`, `poetry`, `aiohttp` and `docker` to create web server listening GET and HEAD requests on port of your choice.
+This is container uses `python`, `poetry`, `aiohttp` and `docker` to create web server listening to GET requests on port of your choice.
 
 ## examples
 
