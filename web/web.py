@@ -42,7 +42,7 @@ def setup() -> Tuple[str, int]:
         host = os.environ["HOST"]
     except KeyError:
         host = "127.0.0.1"
-        logger.warning("Hort was not provided via env. variable HOST, used %s", host)
+        logger.warning("Host was not provided via env. variable HOST, used %s", host)
     try:
         port = int(os.environ["PORT"])
     except KeyError:
