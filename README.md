@@ -1,6 +1,6 @@
 # Simple Docker HTTP server
 
-[![GitHub CI](https://github.com/KSonny4/simple-docker-http-server/actions/workflows/ci.yaml)](https://github.com/KSonny4/simple-docker-http-server/actions/workflows/ci.yaml/badge.svg)
+[![GitHub CI](https://github.com/KSonny4/simple-docker-http-server/actions/workflows/ci.yaml/badge.svg)](https://github.com/KSonny4/simple-docker-http-server/actions/workflows/ci.yaml)
 [![Docker Stars](https://img.shields.io/docker/stars/ksonny4/simple-docker-http-server.svg)](https://hub.docker.com/r/ksonny4/simple-docker-http-server)
 [![Docker Pulls](https://img.shields.io/docker/pulls/ksonny4/simple-docker-http-server.svg)](https://hub.docker.com/r/ksonny4/simple-docker-http-server)
 [![Docker Image Size](https://img.shields.io/docker/image-size/ksonny4/simple-docker-http-server.svg)](https://hub.docker.com/r/ksonny4/simple-docker-http-server)
