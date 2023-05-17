@@ -14,10 +14,9 @@ repository = "https://github.com/KSonny4/simple-http-web"
 include = ["*.conf", "*.json", "py.typed"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.11"
 aiohttp = "^3.5.4"
-pytest-asyncio = "^0.14.0"
-isort = "^5.7.0"
+aiofiles = "^23.1.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.0"
@@ -25,6 +24,9 @@ pytest-cov = "^2.8.1"
 pytest-mypy = "^0.8.0"
 pytest-pylint = "^0.14.1"
 pytest-black = "^0.3.12"
+pytest-asyncio = "^0.14.0"
+isort = "^5.7.0"
+
 
 [tool.poetry.scripts]
 web = "web.web:main"
